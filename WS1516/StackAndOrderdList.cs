@@ -98,17 +98,16 @@ namespace WS1516
 
         public IEnumerable GetStackEnumerator()
         {
-            Node pointer = firstOfStack;
-            while (pointer != null)
-            {
-                yield return pointer.Data;
-                pointer = pointer.Next;
-            }
+            return GetEnumeratorWithStartingPoint(firstOfStack);
         }
 
         public IEnumerable GetSortedEnumerator()
         {
-            Node pointer = firstOfOrderedList;
+            return GetEnumeratorWithStartingPoint(firstOfOrderedList);
+        }
+        
+        private IEnumerable GetEnumeratorWithStartingPoint(Node pointer)
+        {
             while (pointer != null)
             {
                 yield return pointer.Data;
