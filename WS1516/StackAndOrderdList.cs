@@ -77,6 +77,7 @@ namespace WS1516
             pointer.Next = newNode;
         }
 
+        // b)
         public T this[int i]
         {
             get
@@ -96,6 +97,7 @@ namespace WS1516
             }
         }
 
+        // c)
         public IEnumerable GetStackEnumerator()
         {
             return GetEnumeratorWithStartingPoint(firstOfStack);
